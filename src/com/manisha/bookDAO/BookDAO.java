@@ -15,13 +15,13 @@ import com.manisha.user.Users;
 import util.ConnectionUtil;
 
 public class BookDAO {
-public  void register(Book book) throws ClassNotFoundException, SQLException {
+public  void addbook(Book book) throws ClassNotFoundException, SQLException {
 	LocalDate p=LocalDate.parse("2015-08-15");
 	Connection con = ConnectionUtil.getConnection();
 	String sql = "insert into book ( name, price, published_date) values ( ?, ? ,? )";
 	PreparedStatement pst = con.prepareStatement(sql);
-	pst.setString(1, "ca");
-	pst.setInt(2, 850);
+	pst.setString(1,book.getName());
+	pst.setInt(2, book.getPrice());
 	pst.setDate(3,Date.valueOf(p));
 	int row=pst.executeUpdate();
 	System.out.println(row);

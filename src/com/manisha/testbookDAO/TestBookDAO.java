@@ -16,8 +16,8 @@ public class TestBookDAO {
         book.setPublished_date(date);
  
         BookDAO bookDAO = new BookDAO();
-        //bookDAO.register(book);
-        List<Book> bookList=bookDAO.login();
+        //bookDAO.addbook(book);
+        List<Book> bookList=bookDAO.listbook();
         for(Book b:bookList){
         	System.out.println(b);
         }

@@ -1,14 +1,16 @@
 package com.manisha.order;
 
-import java.time.LocalDate;
+
+import java.time.LocalDateTime;
 
 public class Order {
 	 private int id;
 	 private int userId;
 	private int bookId;
-	private  String status;
+	private String status;
+	
 	private int quantity;
-	private LocalDate orderDate ;
+	private LocalDateTime orderDate ;
 	public int getId() {
 		return id;
 	}
@@ -39,10 +41,10 @@ public class Order {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public LocalDate getOrderDate() {
+	public LocalDateTime getOrderDate() {
 		return orderDate;
 	}
-	public void setOrderDate(LocalDate orderDate) {
+	public void setOrderDate(LocalDateTime orderDate) {
 		this.orderDate = orderDate;
 	}
 	@Override
