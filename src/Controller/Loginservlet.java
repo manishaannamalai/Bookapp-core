@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.manisha.user.Users;
 import com.manisha.userdao.UserDAO;
@@ -22,11 +23,8 @@ public class Loginservlet extends HttpServlet{
 	 //Users user = new Users();
 	String email = request.getParameter("email");
 	String password = request.getParameter("password");
-	String name=request.getParameter("name");
-	Users user = new Users();
-	user.setEmail(email);
-    user.setPassword(password);
-    user.setName(name);
+	//String name=request.getParameter("name");
+	
 	
     UserDAO userDAO=new UserDAO();
 	Users user1 = null;
@@ -41,7 +39,7 @@ public class Loginservlet extends HttpServlet{
 		// TODO Auto-generated catch block
 		e1.printStackTrace();
 	} 
-	System.out.println(user);
+	System.out.println(user1);
 	
 	
 	out.println(user1);
@@ -51,7 +49,12 @@ public class Loginservlet extends HttpServlet{
 	}
 	else
 	{
+		
+		HttpSession session=request.getSession();
+		session.setAttribute("Logged_in_user", user1);
 		response.sendRedirect("listbook.jsp");
 	}
+	
+	
 }
 }
