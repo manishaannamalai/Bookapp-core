@@ -1,3 +1,4 @@
+<%@page import="com.manisha.user.Users"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html >
@@ -9,7 +10,9 @@
 <body>
 <h2>Order books</h2>
 <form action="orderservlet">
-UserId:<input type="number" name="userid"  autofocus required></br>
+<% Users user=(Users) session.getAttribute("Logged_in_user"); %>
+welcome <%=user.getName() %></br>
+<!--<input type="hidden" name="userid"  value="<%=user.getId() %>"autofocus required></br>  -->
 Select book:
 <select name="bookid" required></br>
 <option value="1">c</option>

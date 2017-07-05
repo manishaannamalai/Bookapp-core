@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<%@page import="com.manisha.user.Users"%>
 <%@page import="com.manisha.book.Book"%>
 <%@page import="java.util.List"%>
 <%@page import="com.manisha.bookDAO.BookDAO"%>
@@ -7,6 +8,9 @@
 	<title> BookApp_register</title> 
 	</head>
 <body>
+<%Users user=(Users)session.getAttribute("Logged_in_user"); 
+%>
+welcome <%=user.getName() %>
 	<h3>List of books</h3>
 	<% 
 	BookDAO bookDAO=new BookDAO();
@@ -64,5 +68,6 @@
 </tr>
 </tbody>
 </table> -->
+<a href="order.jsp">Order book</a>
 </body>
 </html>
