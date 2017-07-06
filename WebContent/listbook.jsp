@@ -10,7 +10,9 @@
 <body>
 <%Users user=(Users)session.getAttribute("Logged_in_user"); 
 %>
-welcome <%=user.getName() %>
+
+Welcome <%=user.getName() %>!!!
+<a href="Logoutservlet">Logout</a>
 	<h3>List of books</h3>
 	<% 
 	BookDAO bookDAO=new BookDAO();
