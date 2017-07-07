@@ -10,3 +10,5 @@ insert into orders (user_id,book_id,quantity)values(1,1,2);
 insert into orders (user_id,book_id,quantity)values(2,3,1); 
 insert into orders (user_id,book_id,quantity)values(5,1,3); 
 select * from orders;
+delete from orders where user_id=1;
+update orders set quantity=6 where book_id=2; 
