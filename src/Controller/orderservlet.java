@@ -28,6 +28,9 @@ public class orderservlet extends HttpServlet {
 		String quantity = request.getParameter("quantity");
 		//String orderDate = request.getParameter("orderdate");
 		
+		try {
+		OrderValidation.validateOrder(bookid, quantity);
+		
 		HttpSession session=request.getSession();
 		Users user=(Users) session.getAttribute("Logged_in_user");
 		//int u =Integer.parseInt(userid);
@@ -43,15 +46,11 @@ public class orderservlet extends HttpServlet {
         //order.setOrderDate(d);
 		out.println(order);
 		OrderDAO orderDAO = new OrderDAO();
-		try {
+		
 			orderDAO.add(order);
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 }
 }
