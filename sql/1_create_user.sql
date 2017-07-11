@@ -8,4 +8,4 @@ insert into users values(1,'manisha','manisha@gmail.com','asdf');
 select * from users;
 insert into users values(2,'manisha','manish@gmail.com','adf');
 delete from users where name='manish';
-update users set name='manish' where id=2; 
+update users set email='manishaa@gmail.com' where password='afgh'; 
